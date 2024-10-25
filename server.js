@@ -51,3 +51,11 @@ app.get('/api/movies', (req, res) => {
     ];
     res.status(200).json({myMovies:movies });
 });
+
+const path = require('path');
+
+app.get('/index', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.use(express.static('public'));
