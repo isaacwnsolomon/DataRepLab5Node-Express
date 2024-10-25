@@ -24,3 +24,30 @@ app.get('/hello/:name/:sname', (req, res) => {
     const sname = req.params.sname;
     res.send(`Hello ${name} ${sname}`);
 });
+
+app.get('/api/movies', (req, res) => {
+    const movies = [
+        {
+            "Title": "Avengers: Infinity War",
+            "Year": "2018",
+            "imdbID": "tt4154756",
+            "Type": "movie",
+            "Poster": "https://example.com/poster1.jpg"
+        },
+        {
+            "Title": "Captain America: Civil War",
+            "Year": "2016",
+            "imdbID": "tt3498820",
+            "Type": "movie",
+            "Poster": "https://example.com/poster2.jpg"
+        },
+        {
+            "Title": "World War Z",
+            "Year": "2013",
+            "imdbID": "tt0816711",
+            "Type": "movie",
+            "Poster": "https://example.com/poster3.jpg"
+        }
+    ];
+    res.status(200).json({myMovies:movies });
+});
